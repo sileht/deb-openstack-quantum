@@ -1,0 +1,14 @@
+quantum (2012.1~e1-1) experimental; urgency=low
+
+  * [aed8d59] Imported Upstream version 2012.1~e1
+  * [787b937] Switch to dpkg-source 3.0 (quilt) format
+  * [3b3eb8d] added adduser depends
+  * [ce4d1c9] added quantum-plugin-openvswitch-agent
+
+ -- Ghe Rivero <ghe@debian.org>  Wed, 16 Nov 2011 12:55:07 +0100
+
+quantum (0.1-1) experimental; urgency=low
+
+  * Initial release.
+
+ -- Ghe Rivero <ghe@debian.org>  Sat, 05 Nov 2011 13:28:47 +0100

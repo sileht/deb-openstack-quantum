@@ -1,0 +1,43 @@
+--- a/server/etc/init.d/quantum-server
++++ b/server/etc/init.d/quantum-server
+@@ -18,8 +18,16 @@
+ DAEMON_ARGS="--log-file=$LOGFILE"
+ DAEMON_DIR=/var/run
+ 
++USERID=quantum
++GROUPID=quantum
++
+ ENABLED=true
+ 
++if [ ! -x ${DAEMON} ] ; then
++	exit 0
++fi
++
++
+ if test -f /etc/default/quantum-server; then
+   . /etc/default/quantum-server
+ fi
+@@ -32,15 +40,11 @@
+ export PATH="${PATH:+$PATH:}/usr/sbin:/sbin"
+ export TMPDIR=/var/lib/quantum/tmp
+ 
+-if [ ! -x ${DAEMON} ] ; then
+-	exit 0
+-fi
+-
+ case "$1" in
+   start)
+     test "$ENABLED" = "true" || exit 0
+     log_daemon_msg "Starting quantum server" "quantum-server"
+-    start-stop-daemon -Sbmv --pidfile $PIDFILE --chdir $DAEMON_DIR --exec $DAEMON -- $DAEMON_ARGS
++    start-stop-daemon -Sbmv --chuid ${USERID}:${GROUPID} --pidfile $PIDFILE --chdir $DAEMON_DIR --exec $DAEMON -- $DAEMON_ARGS
+     log_end_msg $?
+     ;;
+   stop)
+@@ -65,4 +69,4 @@
+     ;;
+ esac
+ 
+-exit 0
++exit 0
+\ No newline at end of file

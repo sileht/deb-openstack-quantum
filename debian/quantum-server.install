@@ -1,0 +1,4 @@
+server/etc/plugins.ini etc/quantum
+server/etc/quantum.conf etc/quantum
+bin/quantum-server usr/bin
+server/etc/init.d/quantum-server etc/init.d
