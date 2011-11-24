@@ -17,9 +17,6 @@ override_dh_auto_build:
 	 	cd $${PKG_SRC} && python setup.py build --force; cd $${OLDPWD};\
 	done
 
-override_dh_auto_test::
-	# python setup.py test
-
 override_dh_auto_clean:
 	for PKG_SRC in ${PKG_SRCS}; do \
 		cd $${PKG_SRC} && python setup.py clean -a; cd $${OLDPWD};\
