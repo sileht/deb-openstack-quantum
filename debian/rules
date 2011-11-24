@@ -9,9 +9,6 @@ export PKG_SRCS = server client common plugins/cisco-plugin plugins/openvswitch-
 %:
 	dh $@ --with python2
 
-get-orig-source:
-	uscan --verbose --force-download --rename --destdir=../build-area
-
 override_dh_auto_build:
 	for PKG_SRC in ${PKG_SRCS}; do \
 	 	cd $${PKG_SRC} && python setup.py build --force; cd $${OLDPWD};\
