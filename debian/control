@@ -11,6 +11,8 @@ Build-Depends: debhelper (>= 7.0.50~),
 Standards-Version: 3.9.2
 X-Python-Version: >= 2.6
 Homepage: http://launchpad.net/quantum
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/quantum.git;a=summary
+Vcs-Git: git://anonscm.debian.org/openstack/quantum.git
 
 Package: quantum-common
 Architecture: all
