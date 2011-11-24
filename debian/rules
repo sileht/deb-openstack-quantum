@@ -29,7 +29,7 @@ override_dh_auto_install:
 	cd client && python setup.py install --force --root=${TMP}/quantum-client/ --no-compile -O0 --install-layout=deb
 	cd common && python setup.py install --force --root=${TMP}/quantum-common --no-compile -O0 --install-layout=deb
 	cd plugins/sample-plugin && python setup.py install --force --root=${TMP}/quantum-plugin-sample --no-compile -O0 --install-layout=deb
-	find . -type d -name tests | xargs rm -fr 
+	find . -type d -name tests | xargs rm -fr
 	for PKG in quantum-plugin-cisco quantum-plugin-openvswitch; do \
 		cd $${TMP}/$${PKG} && find . -name __init__.py -print0 | grep -FzZ 'plugins/__init__.py' | xargs -0 rm && cd $${OLDPWD}; \
 	done
