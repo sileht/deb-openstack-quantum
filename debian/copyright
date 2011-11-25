@@ -1,6 +1,7 @@
-Format: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
+Format: http://dep.debian.net/deps/dep5
 Upstream-Name: quantum
 Source: https://code.launchpad.net/quantum
+
 Files: *
 Copyright: 2011 OpenStack, LLC.
 License: Apache-2
