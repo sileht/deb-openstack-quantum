@@ -1,3 +1,22 @@
+quantum (2012.1~e1-2) unstable; urgency=low
+
+  [ Julien Danjou ]
+  * [88122af] Fix Maintainer and Uploaders fields
+  * [aafd60c] Remove useless Provides fields in control
+  * [811ceb8] Enhance description
+  * [97f56a7] Cosmetic
+  * [d71fcda] Remove bogus auto test target
+  * [7011ed5] Cosmetic
+  * [a2770db] remove get-orig-source
+  * [d3e1033] Simplify build-depends
+  * [f12a262] Add missing Vcs fields
+
+  [ Ghe Rivero ]
+  * [9d82e62] Added quantum-server dirs
+  * [b529634] Some make up to ovs-quantum-plugin
+
+ -- Ghe Rivero <ghe@debian.org>  Fri, 25 Nov 2011 11:14:25 +0100
+
 quantum (2012.1~e1-1) experimental; urgency=low
 
   * [aed8d59] Imported Upstream version 2012.1~e1
