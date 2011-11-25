@@ -1,12 +1,12 @@
 quantum (2012.1~e1-2) unstable; urgency=low
 
+  * Initial release. Closes: #647652
+
   [ Julien Danjou ]
   * [88122af] Fix Maintainer and Uploaders fields
   * [aafd60c] Remove useless Provides fields in control
   * [811ceb8] Enhance description
-  * [97f56a7] Cosmetic
   * [d71fcda] Remove bogus auto test target
-  * [7011ed5] Cosmetic
   * [a2770db] remove get-orig-source
   * [d3e1033] Simplify build-depends
   * [f12a262] Add missing Vcs fields
