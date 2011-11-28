@@ -1,0 +1,41 @@
+#!/usr/bin/make -f                                                                                                                        
+
+#export DH_VERBOSE=1
+#export DH_OPTIONS=-v
+
+export TMP=$(CURDIR)/debian/
+export PKGS = cisco_plugin client common openvswitch_plugin server sample_plugin
+
+%:
+	dh $@ --with python2
+
+get-orig-source:
+	uscan --verbose --force-download --rename --destdir=../build-area
+
+override_dh_auto_build:
+#	for PKG in ${PKGS}; do \
+#		temp=mktemp;\
+#	 	python setup_$${PKG}.py build --force --build-base=${{temp}};\
+#	done
+
+override_dh_auto_test::
+# 	python setup.py test
+
+override_dh_auto_clean:
+#	for PKG in ${PKGS}; do \
+#		python setup_$${PKG}.py clean -a;\
+#	done
+
+override_dh_auto_install:
+
+	python setup_cisco_plugin.py build -b cisco_plugin install --force --root=${TMP}/quantum-plugin-cisco/ --no-compile -O0 --install-layout=deb
+	python setup_openvswitch_plugin.py build -b openvswitch_plugin install --force --root=${TMP}/quantum-plugin-openvswitch/ --no-compile -O0 --install-layout=deb
+	python setup_server.py build -b server install --force --root=${TMP}/quantum-server/ --no-compile -O0 --install-layout=deb
+	python setup_client.py build -b client install --force --root=${TMP}/quantum-client/ --no-compile -O0 --install-layout=deb
+	python setup_common.py build -b common install --force --root=${TMP}/quantum-common --no-compile -O0 --install-layout=deb
+	python setup_sample_plugin.py build -b sample_plugin install --force --root=${TMP}/quantum-plugin-sample --no-compile -O0 --install-layout=deb
+	find . -type d -name tests | xargs rm -fr 
+
+override_dh_installinit:
+	dh_installinit -pquantum-server -o
+	dh_installinit --remaining-packages

@@ -1,0 +1,107 @@
+Source: quantum
+Section: net
+Priority: optional
+Maintainer: Ghe Rivero <ghe@debian.org>
+Build-Depends: debhelper (>= 7.0.50~),
+ python-all (>=2.6.6-3~),
+ python-coverage,
+ python-eventlet (>= 0.9.8),
+ python-routes,
+ python-nose,
+ python-pastedeploy,
+ pep8,
+ python-gflags,
+ python-simplejson,
+ python-sqlalchemy,
+ python-webob,
+ python-webtest
+Standards-Version: 3.9.2
+X-Python-Version: >= 2.6
+Homepage: http://launchpad.net/quantum
+
+Package: quantum-common
+Architecture: all
+Section: python
+Depends: ${python:Depends}, ${misc:Depends}, ${shlibs:Depends},
+	 adduser
+Provides: ${python:Provides}
+Description: Virtual network service for Openstack (common files)
+ Quantum provides an API to dynamically request and configure virtual networks. 
+ These networks connect "interfaces" from other OpenStack services (e.g., vNICs 
+ from Nova VMs). The Quantum API supports extensions to provide advanced network 
+ capabilities (e.g., QoS, ACLs, network monitoring, etc)
+ .
+ This package provides the core bianries and libraries to manage quantum
+
+Package: quantum-server
+Architecture: all
+Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-plugin, quantum-common
+Provides: ${python:Provides}
+Description: Virtual network service for Openstack (common files)
+ Quantum provides an API to dynamically request and configure virtual networks.
+ These networks connect "interfaces" from other OpenStack services (e.g., vNICs
+ from Nova VMs). The Quantum API supports extensions to provide advanced network
+ capabilities (e.g., QoS, ACLs, network monitoring, etc).
+ .
+ This package provides the quantum server.
+
+Package: quantum-client
+Architecture: all
+Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-common
+Provides: ${python:Provides}
+Description: Virtual network service for Openstack (client agent)
+ Quantum provides an API to dynamically request and configure virtual networks.
+ These networks connect "interfaces" from other OpenStack services (e.g., vNICs
+ from Nova VMs). The Quantum API supports extensions to provide advanced network
+ capabilities (e.g., QoS, ACLs, network monitoring, etc).
+ .
+ This package provides the client agent.
+
+Package: quantum-plugin-cisco
+Architecture: all
+Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-common
+Provides: ${python:Provides}, quantum-plugin
+Description: Virtual network service for Openstack (cisco plugin)
+ Quantum provides an API to dynamically request and configure virtual networks.
+ These networks connect "interfaces" from other OpenStack services (e.g., vNICs
+ from Nova VMs). The Quantum API supports extensions to provide advanced network
+ capabilities (e.g., QoS, ACLs, network monitoring, etc).
+ .
+ This package provides the plugin to use with cisco hardware.
+
+Package: quantum-plugin-openvswitch
+Architecture: all
+Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-common, openvswitch-switch
+Provides: ${python:Provides}, quantum-plugin
+Description: Virtual network service for Openstack (openvswitch plugin)
+ Quantum provides an API to dynamically request and configure virtual networks.
+ These networks connect "interfaces" from other OpenStack services (e.g., vNICs
+ from Nova VMs). The Quantum API supports extensions to provide advanced network
+ capabilities (e.g., QoS, ACLs, network monitoring, etc).
+ .
+ This package provides the plugin to use with openvswitch.
+
+Package: quantum-plugin-sample
+Architecture: all
+Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-common
+Provides: ${python:Provides}, quantum-plugin
+Description: Virtual network service for Openstack (sample plugin)
+ Quantum provides an API to dynamically request and configure virtual networks.
+ These networks connect "interfaces" from other OpenStack services (e.g., vNICs
+ from Nova VMs). The Quantum API supports extensions to provide advanced network
+ capabilities (e.g., QoS, ACLs, network monitoring, etc).
+ .
+ This package provides a sample plugin to work with.
+
+Package: quantum-plugin-openvswitch-agent
+Architecture: all
+Depends:  ${python:Depends}, ${shlibs:Depends}, ${misc:Depends},
+	  openvswitch-switch
+Description: Virtual network service for Openstack (openvswitch agent)
+ Quantum provides an API to dynamically request and configure virtual networks.
+ These networks connect "interfaces" from other OpenStack services (e.g., vNICs
+ from Nova VMs). The Quantum API supports extensions to provide advanced network
+ capabilities (e.g., QoS, ACLs, network monitoring, etc).
+ .
+ This package provides the openvswitch-agent which should run on each compute 
+ node
