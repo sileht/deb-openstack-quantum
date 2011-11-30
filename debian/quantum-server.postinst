@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "configure" ]
+then
+    chown -R quantum:quantum /etc/quantum
+    chmod 0700 /etc/quantum
+fi
+
+#DEBHELPER#
