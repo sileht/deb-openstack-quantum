@@ -39,7 +39,7 @@ Description: OpenStack Virtual network service - common files
 
 Package: quantum-server
 Architecture: all
-Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-plugin, quantum-common
+Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, lsb-base, quantum-plugin, quantum-common
 Description: OpenStack Virtual network service - server
  Quantum provides an API to dynamically request and configure virtual networks.
  These networks connect "interfaces" from other OpenStack services (e.g., vNICs
