@@ -7,7 +7,17 @@ Uploaders: Julien Danjou <acid@debian.org>,
            Ghe Rivero <ghe@debian.org>
 Build-Depends: debhelper (>= 7.0.50~),
  python-all (>= 2.6.6-3~),
- python-setuptools
+ python-setuptools,
+ python-webtest,
+ python-eventlet,
+ python-routes,
+ python-paste,
+ python-pastedeploy,
+ python-gflags,
+ python-simplejson,
+ python-sqlalchemy,
+ python-webob,
+ python-nose
 Standards-Version: 3.9.2
 X-Python-Version: >= 2.6
 Homepage: http://launchpad.net/quantum
