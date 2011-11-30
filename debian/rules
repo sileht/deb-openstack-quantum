@@ -13,11 +13,12 @@ override_dh_auto_build:
 	for PKG_SRC in ${PKG_SRCS}; do \
 	 	cd $${PKG_SRC} && python setup.py build --force; cd $${OLDPWD};\
 	done
-	mv ${CURDIR}/plugins/openvswitch-plugin/lib/quantum/plugins/openvswitch/agent/ovs_quantum_agent.py ${CURDIR}/plugins/openvswitch-plugin/lib/quantum/plugins/openvswitch/agent/ovs-quantum-agent
 
 override_dh_auto_clean:
 	for PKG_SRC in ${PKG_SRCS}; do \
-		cd $${PKG_SRC} && python setup.py clean -a; cd $${OLDPWD};\
+		cd $(CURDIR)/$${PKG_SRC} \
+			&& python setup.py clean -a \
+			&& rm -rf lib/*.egg-info ; \
 	done
 
 override_dh_auto_install:
@@ -27,10 +28,13 @@ override_dh_auto_install:
 	cd client && python setup.py install --force --root=${TMP}/quantum-client/ --no-compile -O0 --install-layout=deb
 	cd common && python setup.py install --force --root=${TMP}/quantum-common --no-compile -O0 --install-layout=deb
 	cd plugins/sample-plugin && python setup.py install --force --root=${TMP}/quantum-plugin-sample --no-compile -O0 --install-layout=deb
-	find . -type d -name tests | xargs rm -fr
 	for PKG in quantum-plugin-cisco quantum-plugin-openvswitch; do \
 		cd $${TMP}/$${PKG} && find . -name __init__.py -print0 | grep -FzZ 'plugins/__init__.py' | xargs -0 rm && cd $${OLDPWD}; \
 	done
+	install -d debian/quantum-plugin-openvswitch-agent/usr/bin
+	install -m 755 plugins/openvswitch-plugin/lib/quantum/plugins/openvswitch/agent/ovs_quantum_agent.py \
+		debian/quantum-plugin-openvswitch-agent/usr/bin/ovs-quantum-agent
+
 
 override_dh_installinit:
 	dh_installinit -pquantum-server -o
