@@ -39,7 +39,9 @@ Description: OpenStack Virtual network service - common files
 
 Package: quantum-server
 Architecture: all
-Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, lsb-base, quantum-plugin, quantum-common
+Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, lsb-base,
+ quantum-plugin-openvswitch | quantum-plugin,
+ quantum-common
 Description: OpenStack Virtual network service - server
  Quantum provides an API to dynamically request and configure virtual networks.
  These networks connect "interfaces" from other OpenStack services (e.g., vNICs
@@ -62,6 +64,7 @@ Description: OpenStack Virtual network service - client
 Package: quantum-plugin-cisco
 Architecture: all
 Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-common
+Provides: quantum-plugin
 Description: OpenStack Virtual network service - cisco plugin
  Quantum provides an API to dynamically request and configure virtual networks.
  These networks connect "interfaces" from other OpenStack services (e.g., vNICs
@@ -73,6 +76,7 @@ Description: OpenStack Virtual network service - cisco plugin
 Package: quantum-plugin-openvswitch
 Architecture: all
 Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-common, openvswitch-switch
+Provides: quantum-plugin
 Description: OpenStack Virtual network service - openvswitch plugin
  Quantum provides an API to dynamically request and configure virtual networks.
  These networks connect "interfaces" from other OpenStack services (e.g., vNICs
@@ -84,6 +88,7 @@ Description: OpenStack Virtual network service - openvswitch plugin
 Package: quantum-plugin-sample
 Architecture: all
 Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-common
+Provides: quantum-plugin
 Description: OpenStack Virtual network service - sample plugin
  Quantum provides an API to dynamically request and configure virtual networks.
  These networks connect "interfaces" from other OpenStack services (e.g., vNICs
