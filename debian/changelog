@@ -1,3 +1,11 @@
+quantum (2012.1~e1-4) unstable; urgency=low
+
+  [ Ghe Rivero ]
+  * Removed tests from installed packages
+  * Plugins provides quantum-plugin
+
+ -- Ghe Rivero <ghe@debian.org>  Thu, 01 Dec 2011 20:18:03 +0100
+
 quantum (2012.1~e1-3) unstable; urgency=low
 
   [ Julien Danjou ]
