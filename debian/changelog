@@ -1,3 +1,9 @@
+quantum (2012.1~e2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Ghe Rivero <ghe@debian.org>  Fri, 16 Dec 2011 19:06:16 +0100
+
 quantum (2012.1~e1-4) unstable; urgency=low
 
   [ Ghe Rivero ]
