@@ -29,9 +29,19 @@ import sys
 
 
 ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-VENV = os.path.expanduser('~/.quantum-venv')
+VENV = os.path.join(ROOT, '.quantum-venv')
+PY_VERSION = "python%s.%s" % (sys.version_info[0], sys.version_info[1])
+
 VENV_EXISTS = bool(os.path.exists(VENV))
-PIP_REQUIRES = os.path.join(ROOT, 'tools', 'pip-requires')
+
+
+# Find all pip-requires in the project
+PIP_REQUIRES = []
+for root, dirs, files in os.walk(os.path.join(ROOT)):
+    for f in files:
+        if f == 'pip-requires':
+            if os.path.isfile(os.path.join(root, f)):
+                PIP_REQUIRES.append(os.path.join(root, f))
 
 
 def die(message, *args):
@@ -92,11 +102,15 @@ def install_dependencies(venv=VENV):
 
     # Install greenlet by hand - just listing it in the requires file does not
     # get it in stalled in the right order
-    run_command(['tools/with_venv.sh', 'pip', 'install', '-E', venv,
-        '-r', PIP_REQUIRES], redirect_output=False)
+    # Create an install command with all found PIP_REQUIRES
+    cmd = ['tools/with_venv.sh', 'pip', 'install', '-E', venv]
+    for p in PIP_REQUIRES:
+        cmd.extend(['-r', p])
+
+    run_command(cmd, redirect_output=False)
 
     # Tell the virtual env how to "import quantum"
-    pthfile = os.path.join(venv, "lib", "python2.6", "site-packages",
+    pthfile = os.path.join(venv, "lib", PY_VERSION, "site-packages",
                                  "quantum.pth")
     f = open(pthfile, 'w')
     f.write("%s\n" % ROOT)

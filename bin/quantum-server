@@ -16,15 +16,9 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-# If ../quantum/__init__.py exists, add ../ to Python search path, so that
-# it will override what happens to be installed in /usr/(local/)lib/python...
-
-import __init__
-try:
-    import source_environment
-except ImportError:
-    pass
-
+import os
+import sys
+sys.path.insert(0, os.getcwd())
 from quantum.server import main as server
 
 server()
