@@ -1,5 +1,5 @@
---- a/server/etc/init.d/quantum-server
-+++ b/server/etc/init.d/quantum-server
+--- a/etc/init.d/quantum-server
++++ b/etc/init.d/quantum-server
 @@ -18,8 +18,16 @@
  DAEMON_ARGS="--log-file=$LOGFILE"
  DAEMON_DIR=/var/run
