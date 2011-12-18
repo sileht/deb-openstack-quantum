@@ -30,9 +30,9 @@ Section: python
 Depends: ${python:Depends}, ${misc:Depends}, ${shlibs:Depends},
 	 adduser
 Description: OpenStack Virtual network service - common files
- Quantum provides an API to dynamically request and configure virtual networks. 
- These networks connect "interfaces" from other OpenStack services (e.g., vNICs 
- from Nova VMs). The Quantum API supports extensions to provide advanced network 
+ Quantum provides an API to dynamically request and configure virtual networks.
+ These networks connect "interfaces" from other OpenStack services (e.g., vNICs
+ from Nova VMs). The Quantum API supports extensions to provide advanced network
  capabilities (e.g., QoS, ACLs, network monitoring, etc)
  .
  This package provides the core bianries and libraries to manage quantum
@@ -107,5 +107,5 @@ Description: OpenStack Virtual network service - openvswitch agent
  from Nova VMs). The Quantum API supports extensions to provide advanced network
  capabilities (e.g., QoS, ACLs, network monitoring, etc).
  .
- This package provides the openvswitch-agent which should run on each compute 
+ This package provides the openvswitch-agent which should run on each compute
  node
