@@ -1,1 +1,1 @@
-etc/quantum/plugins/cisco
+etc/quantum/plugins/cisco/*.ini etc/quantum/plugins/cisco
