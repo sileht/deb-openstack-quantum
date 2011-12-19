@@ -1,2 +1,2 @@
-/var/lib/quantum
-/var/log/quantum
+var/lib/quantum
+var/log/quantum
