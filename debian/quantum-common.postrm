@@ -4,19 +4,11 @@ set -e
 
 case $1 in
         purge)
-                echo "Purging quantum"
-
-                if (which deluser && getent passwd quantum) > /dev/null 2>&1; then
-                        deluser --system --quiet quantum
-                fi
-
-                if (which delgroup && getent group quantum) > /dev/null 2>&1; then
-                        delgroup --system --quiet quantum
-                fi
-
-                [ -e /var/lib/quantum ] && rm -rf /var/lib/quantum
-                [ -e /var/log/quantum ] && rm -rf /var/log/quantum
-                ;;
+        userdel quantum || true
+        userdel quantum || true
+	rm -rf /var/lib/quantum
+        rm -rf /var/log/quantum
+        ;;
 esac
 
-#DEBHELPER#   
+#DEBHELPER#
