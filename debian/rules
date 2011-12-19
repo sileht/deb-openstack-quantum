@@ -12,6 +12,8 @@ export PKGS = cisco_plugin client common openvswitch_plugin server sample_plugin
 
 override_dh_auto_clean:
 
+override_dh_auto_build:
+
 override_dh_auto_install:
 	python setup_cisco_plugin.py build -b cisco_plugin install --force --root=${TMP}/quantum-plugin-cisco/ --no-compile -O0 --install-layout=deb
 	python setup_openvswitch_plugin.py build -b openvswitch_plugin install --force --root=${TMP}/quantum-plugin-openvswitch/ --no-compile -O0 --install-layout=deb
