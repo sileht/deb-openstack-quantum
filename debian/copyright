@@ -19,3 +19,16 @@ License: Apache-2
  .
  On Debian-based systems the full text of the Apache version 2.0 license
  can be found in `/usr/share/common-licenses/Apache-2.0'.
+
+Files: tools/rfc.sh
+Copyright: Copyright (c) 2010-2011 Gluster, Inc
+License: GPL-v3
+                     GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+ .
+ Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+ .
+ On Debian-based systems the full text of the Apache version 2.0 license
+ can be found in `/usr/share/common-licenses/GPL-3'
