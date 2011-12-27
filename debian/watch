@@ -1,0 +1,3 @@
+version=3
+http://launchpad.net/quantum/+download http://launchpad.net/quantum/.*/quantum-(.*).tar.*
+http://quantum.openstack.org/tarballs/ quantum-(.*).tar.gz
