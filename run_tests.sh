@@ -34,7 +34,7 @@ function process_option {
   esac
 }
 
-venv=.quantum-venv
+venv=.venv
 with_venv=tools/with_venv.sh
 always_venv=0
 never_venv=0
@@ -96,7 +96,7 @@ function run_pep8 {
 
   PEP8_EXCLUDE="vcsversion.py,*.pyc"
   PEP8_OPTIONS="--exclude=$PEP8_EXCLUDE --repeat --show-source"
-  PEP8_INCLUDE="bin/* quantum run_tests.py setup*.py version.py"
+  PEP8_INCLUDE="bin/* quantum run_tests.py setup*.py"
   ${wrapper} pep8 $PEP8_OPTIONS $PEP8_INCLUDE
 }
 

@@ -6,3 +6,5 @@ run_tests.err.log
 run_tests.log
 tests/
 .quantum-venv/
+.venv/
+quantum/vcsversion.py
