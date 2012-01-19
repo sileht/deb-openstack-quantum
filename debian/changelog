@@ -1,3 +1,9 @@
+quantum (2012.1~e2+git62-g9c5c2ca-1) experimental; urgency=low
+
+  * New snapshot release
+
+ -- Ghe Rivero <ghe@debian.org>  Thu, 19 Jan 2012 08:16:00 +0100
+
 quantum (2012.1~e2+git47-g5b23b5e-1) experimental; urgency=low
 
   * New snapshot release.
