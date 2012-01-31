@@ -29,20 +29,11 @@ import sys
 
 
 ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-VENV = os.path.join(ROOT, '.quantum-venv')
+VENV = os.path.join(ROOT, '.venv')
+PIP_REQUIRES = os.path.join(ROOT, 'tools', 'pip-requires')
 PY_VERSION = "python%s.%s" % (sys.version_info[0], sys.version_info[1])
 
 VENV_EXISTS = bool(os.path.exists(VENV))
-
-
-# Find all pip-requires in the project
-PIP_REQUIRES = []
-for root, dirs, files in os.walk(os.path.join(ROOT)):
-    for f in files:
-        if f == 'pip-requires':
-            if os.path.isfile(os.path.join(root, f)):
-                PIP_REQUIRES.append(os.path.join(root, f))
-
 
 def die(message, *args):
     print >> sys.stderr, message % args
@@ -92,22 +83,16 @@ def create_virtualenv(venv=VENV, install_pip=False):
     print 'done.'
     print 'Installing pip in virtualenv...',
     if install_pip and \
-            not run_command(['tools/with_venv.sh', 'easy_install', 'pip']):
+            not run_command(['tools/with_venv.sh', 'easy_install',
+                             'pip>1.0']):
         die("Failed to install pip.")
     print 'done.'
 
 
 def install_dependencies(venv=VENV):
     print 'Installing dependencies with pip (this can take a while)...'
-
-    # Install greenlet by hand - just listing it in the requires file does not
-    # get it in stalled in the right order
-    # Create an install command with all found PIP_REQUIRES
-    cmd = ['tools/with_venv.sh', 'pip', 'install', '-E', venv]
-    for p in PIP_REQUIRES:
-        cmd.extend(['-r', p])
-
-    run_command(cmd, redirect_output=False)
+    run_command(['tools/with_venv.sh', 'pip', 'install', '-E', venv, '-r',
+                 PIP_REQUIRES], redirect_output=False)
 
     # Tell the virtual env how to "import quantum"
     pthfile = os.path.join(venv, "lib", PY_VERSION, "site-packages",
@@ -126,7 +111,7 @@ def print_help():
  To activate the Quantum virtualenv for the extent of your current shell
  session you can run:
 
- $ source .quantum-venv/bin/activate
+ $ source .venv/bin/activate
 
  Or, if you prefer, you can run commands in the virtualenv on a case by case
  basis by running:
