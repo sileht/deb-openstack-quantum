@@ -2,3 +2,7 @@ etc/plugins.ini etc/quantum
 etc/quantum.conf etc/quantum
 bin/quantum-server usr/bin
 etc/init.d/quantum-server
+usr/lib/python*/dist-packages/quantum/api
+usr/lib/python*/dist-packages/quantum/db
+usr/lib/python*/dist-packages/quantum/extensions
+usr/lib/python*/dist-packages/quantum/*.py
