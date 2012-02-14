@@ -7,3 +7,4 @@ usr/lib/python*/dist-packages/quantum/db
 usr/lib/python*/dist-packages/quantum/extensions
 usr/lib/python*/dist-packages/quantum/*.py
 usr/lib/python*/dist-packages/quantum/server
+usr/lib/python*/dist-packages/quantum/plugins/__init__.py
