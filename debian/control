@@ -73,6 +73,19 @@ Description: OpenStack Virtual network service - sample plugin
  .
  This package provides a sample plugin to work with.
 
+Package: quantum-plugin-linuxbridge
+Architecture: all
+Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-common,
+ bridge-utils
+Provides: quantum-plugin
+Description: OpenStack Virtual network service - linux bridge plugin
+ Quantum provides an API to dynamically request and configure virtual networks.
+ These networks connect "interfaces" from other OpenStack services (e.g., vNICs
+ from Nova VMs). The Quantum API supports extensions to provide advanced network
+ capabilities (e.g., QoS, ACLs, network monitoring, etc).
+ .
+ This package provides a linux bridge plugin to work with.
+
 Package: quantum-plugin-openvswitch-agent
 Architecture: all
 Depends:  ${python:Depends}, ${shlibs:Depends}, ${misc:Depends},
