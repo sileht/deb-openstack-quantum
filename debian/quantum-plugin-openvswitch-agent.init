@@ -13,11 +13,12 @@
 
 # PATH should only include /usr/* if it runs after the mountnfs.sh script
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
-DESC="Openstacl Quantum OpenVSwitch Plugin Agente"
+DESC="Openstack Quantum OpenVSwitch Plugin Agent"
 NAME=ovs-quantum-agent
 DAEMON=/usr/bin/ovs-quantum-agent
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
+CONF_FILE=/etc/quantum/plugins/openvswitch/ovs_quantum_plugin.ini
 
 # Exit if the package is not installed
 [ -x $DAEMON ] || exit 0
@@ -31,7 +32,8 @@ do_start()
 {
 	start-stop-daemon --start --background --quiet --chuid root:root --make-pidfile --pidfile $PIDFILE --startas $DAEMON --test > /dev/null \
 		|| return 1
-	start-stop-daemon --start --background --quiet --chuid root:root --make-pidfile --pidfile $PIDFILE --startas $DAEMON \
+	start-stop-daemon --start --background --quiet --chuid root:root --make-pidfile --pidfile $PIDFILE --startas $DAEMON -- \
+	        $CONF_FILE \
 		|| return 2
 }
 
