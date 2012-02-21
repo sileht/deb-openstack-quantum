@@ -30,9 +30,9 @@ CONF_FILE=/etc/quantum/plugins/openvswitch/ovs_quantum_plugin.ini
 
 do_start()
 {
-	start-stop-daemon --start --background --quiet --chuid quantum:netdev --make-pidfile --pidfile $PIDFILE --startas $DAEMON --test > /dev/null \
+	start-stop-daemon --start --background --quiet --chuid root:root --make-pidfile --pidfile $PIDFILE --startas $DAEMON --test > /dev/null \
 		|| return 1
-	start-stop-daemon --start --background --quiet --chuid quantum:netdev --make-pidfile --pidfile $PIDFILE --startas $DAEMON -- \
+	start-stop-daemon --start --background --quiet --chuid root:root --make-pidfile --pidfile $PIDFILE --startas $DAEMON -- \
 	        $CONF_FILE \
 		|| return 2
 }
