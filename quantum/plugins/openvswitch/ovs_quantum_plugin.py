@@ -16,6 +16,7 @@
 # @author: Somik Behera, Nicira Networks, Inc.
 # @author: Brad Hall, Nicira Networks, Inc.
 # @author: Dan Wendlandt, Nicira Networks, Inc.
+# @author: Dave Lapsley, Nicira Networks, Inc.
 
 import ConfigParser
 import logging as LOG
@@ -32,7 +33,7 @@ import quantum.db.api as db
 import ovs_db
 
 CONF_FILE = find_config_file(
-  {"config_file": "etc/quantum/plugins/openvswitch/ovs_quantum_plugin.ini"},
+  {"plugin": "openvswitch"},
   None, "ovs_quantum_plugin.ini")
 
 LOG.basicConfig(level=LOG.WARN)
