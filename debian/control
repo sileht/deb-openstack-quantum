@@ -18,7 +18,7 @@ Build-Depends: debhelper (>= 7.0.50~),
  python-sqlalchemy,
  python-webob,
  python-nose
-Standards-Version: 3.9.2
+Standards-Version: 3.9.3
 X-Python-Version: >= 2.6
 Homepage: http://launchpad.net/quantum
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/quantum.git;a=summary
@@ -73,6 +73,18 @@ Description: OpenStack Virtual network service - sample plugin
  .
  This package provides a sample plugin to work with.
 
+Package: quantum-plugin-nicira
+Architecture: all
+Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-common
+Provides: quantum-plugin
+Description: OpenStack Virtual network service - nicira NVP plugin
+ Quantum provides an API to dynamically request and configure virtual networks.
+ These networks connect "interfaces" from other OpenStack services (e.g., vNICs
+ from Nova VMs). The Quantum API supports extensions to provide advanced network
+ capabilities (e.g., QoS, ACLs, network monitoring, etc).
+ .
+ This package provides the plugin to use with Nicira NVP controllers.
+
 Package: quantum-plugin-linuxbridge
 Architecture: all
 Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-common,
@@ -98,3 +110,15 @@ Description: OpenStack Virtual network service - openvswitch agent
  .
  This package provides the openvswitch-agent which should run on each compute
  node
+
+Package: quantum-plugin-ryu
+Architecture: all
+Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-common,
+Provides: quantum-plugin
+Description: OpenStack Virtual network service - ryu plugin
+ Quantum provides an API to dynamically request and configure virtual networks.
+ These networks connect "interfaces" from other OpenStack services (e.g., vNICs
+ from Nova VMs). The Quantum API supports extensions to provide advanced network
+ capabilities (e.g., QoS, ACLs, network monitoring, etc).
+ .
+ This package provides a plugin to use with Ryu Network Operating Ssytem
