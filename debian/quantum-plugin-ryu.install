@@ -1,1 +1,3 @@
 usr/lib/python*/dist-packages/quantum/plugins/ryu
+bin/quantum-ryu-agente usr/bin
+etc/quantum/plugins/ryu

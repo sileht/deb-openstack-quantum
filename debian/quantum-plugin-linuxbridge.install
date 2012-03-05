@@ -1,1 +1,2 @@
 usr/lib/python*/dist-packages/quantum/plugins/linuxbridge
+etc/quantum/plugins/linuxbridge
