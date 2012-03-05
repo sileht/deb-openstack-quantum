@@ -1,3 +1,2 @@
 etc/quantum/plugins/openvswitch
 usr/lib/python*/dist-packages/quantum/plugins/openvswitch
-bin/quantum-openvswitch-agent usr/bin
