@@ -1,3 +1,9 @@
+quantum (2012.1~e4-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Ghe Rivero <ghe.rivero@stackops.com>  Mon, 05 Mar 2012 17:51:05 +0100
+
 quantum (2012.1~e3+git3-g25e22bb-1) experimental; urgency=low
 
   [ Ghe Rivero ]
