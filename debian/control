@@ -101,7 +101,7 @@ Description: OpenStack Virtual network service - linux bridge plugin
 Package: quantum-plugin-openvswitch-agent
 Architecture: all
 Depends:  ${python:Depends}, ${shlibs:Depends}, ${misc:Depends},
-	  openvswitch-switch
+	  openvswitch-switch, quantum-plugin-openvswitch
 Description: OpenStack Virtual network service - openvswitch agent
  Quantum provides an API to dynamically request and configure virtual networks.
  These networks connect "interfaces" from other OpenStack services (e.g., vNICs
