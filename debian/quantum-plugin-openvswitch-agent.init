@@ -14,8 +14,8 @@
 # PATH should only include /usr/* if it runs after the mountnfs.sh script
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="Openstack Quantum OpenVSwitch Plugin Agent"
-NAME=ovs-quantum-agent
-DAEMON=/usr/bin/ovs-quantum-agent
+NAME=quantum-openvswitch-agent
+DAEMON=/usr/bin/quantum-openvswitch-agent
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
 CONF_FILE=/etc/quantum/plugins/openvswitch/ovs_quantum_plugin.ini
