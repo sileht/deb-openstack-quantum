@@ -8,9 +8,6 @@
 override_dh_auto_install:
 	dh_auto_install
 	find . -type d -name tests | xargs rm -fr
-	install -d debian/quantum-plugin-openvswitch-agent/usr/bin
-	install -m 755 quantum/plugins/openvswitch/agent/ovs_quantum_agent.py \
-		debian/quantum-plugin-openvswitch-agent/usr/bin/ovs-quantum-agent
 
 override_dh_installinit:
 	dh_installinit -pquantum-server -o

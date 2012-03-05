@@ -1,1 +1,2 @@
 usr/lib/python*/dist-packages/quantum/plugins/nicira
+etc/quantum/plugins/nicira
