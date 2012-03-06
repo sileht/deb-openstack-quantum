@@ -1,2 +1,3 @@
+fix_namespace.patch
 sql_conn-registry.patch
 init.patch

@@ -5,6 +5,7 @@ etc/init.d/quantum-server
 usr/lib/python*/dist-packages/quantum/api
 usr/lib/python*/dist-packages/quantum/db
 usr/lib/python*/dist-packages/quantum/extensions
-usr/lib/python*/dist-packages/quantum/*.py
+usr/lib/python*/dist-packages/quantum/{manager,quantum_plugin_base,service,vcsversion,version,wsgi}.py
 usr/lib/python*/dist-packages/quantum/server
+usr/lib/python*/dist-packages/quantum-*.egg-info
 usr/lib/python*/dist-packages/quantum/plugins/__init__.py
