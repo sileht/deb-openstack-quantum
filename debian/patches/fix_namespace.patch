@@ -1,6 +1,6 @@
 --- a/setup.py
 +++ b/setup.py
-@@ -120,4 +120,5 @@
+@@ -119,4 +119,5 @@
              'quantum-server = quantum.server:main',
          ]
      },
