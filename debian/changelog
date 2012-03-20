@@ -1,3 +1,9 @@
+quantum (2012.1~rc1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Ghe Rivero <ghe.rivero@stackops.com>  Tue, 20 Mar 2012 13:38:43 +0100
+
 quantum (2012.1~e4-2) unstable; urgency=low
 
   * Fix __init__.py conflict (Closes: 662750)
