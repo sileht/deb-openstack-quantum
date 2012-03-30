@@ -1,3 +1,9 @@
+quantum (2012.1~rc1-2) unstable; urgency=low
+
+  * Added ryu-agent and linuxbridge-agent binary packages.
+
+ -- Ghe Rivero <ghe.rivero@stackops.com>  Fri, 30 Mar 2012 10:26:07 +0200
+
 quantum (2012.1~rc1-1) unstable; urgency=low
 
   * New upstream release
