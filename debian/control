@@ -111,6 +111,20 @@ Description: OpenStack Virtual network service - openvswitch agent
  This package provides the openvswitch-agent which should run on each compute
  node
 
+Package: quantum-plugin-linuxbridge-agent
+Architecture: all
+Depends:  ${python:Depends}, ${shlibs:Depends}, ${misc:Depends},
+          bridge-utils
+Description: OpenStack Virtual network service - linuxbridge agent
+ Quantum provides an API to dynamically request and configure virtual networks.
+ These networks connect "interfaces" from other OpenStack services (e.g., vNICs
+ from Nova VMs). The Quantum API supports extensions to provide advanced network
+ capabilities (e.g., QoS, ACLs, network monitoring, etc).
+ .
+ This package provides the linuxbridge-agent which should run on each compute
+ node
+
+
 Package: quantum-plugin-ryu
 Architecture: all
 Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-common,
@@ -122,3 +136,15 @@ Description: OpenStack Virtual network service - ryu plugin
  capabilities (e.g., QoS, ACLs, network monitoring, etc).
  .
  This package provides a plugin to use with Ryu Network Operating Ssytem
+
+Package: quantum-plugin-ryu-agent
+Architecture: all
+Depends:  ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}
+Description: OpenStack Virtual network service - openvswitch agent
+ Quantum provides an API to dynamically request and configure virtual networks.
+ These networks connect "interfaces" from other OpenStack services (e.g., vNICs
+ from Nova VMs). The Quantum API supports extensions to provide advanced network
+ capabilities (e.g., QoS, ACLs, network monitoring, etc).
+ .
+ This package provides the ryu-agent which should run on each compute
+ node
