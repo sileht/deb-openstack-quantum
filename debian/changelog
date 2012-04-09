@@ -1,3 +1,9 @@
+quantum (2012.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Ghe Rivero <ghe.rivero@stackops.com>  Mon, 09 Apr 2012 09:40:14 +0200
+
 quantum (2012.1~rc2-1) unstable; urgency=low
 
   * New upstream release
