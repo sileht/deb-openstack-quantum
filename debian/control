@@ -44,6 +44,8 @@ Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-common,
  python-quantum
 Provides: quantum-plugin
 Conflicts: quantum-plugin
+Replaces: python-quantum (<< 2012.1-3)
+Breaks: python-quantum (<< 2012.1-3)
 Description: OpenStack Virtual network service - cisco plugin
  Quantum provides an API to dynamically request and configure virtual networks.
  These networks connect "interfaces" from other OpenStack services (e.g., vNICs
@@ -58,6 +60,8 @@ Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-common, 
  python-quantum
 Provides: quantum-plugin
 Conflicts: quantum-plugin
+Replaces: python-quantum (<< 2012.1-3)
+Breaks: python-quantum (<< 2012.1-3)
 Description: OpenStack Virtual network service - openvswitch plugin
  Quantum provides an API to dynamically request and configure virtual networks.
  These networks connect "interfaces" from other OpenStack services (e.g., vNICs
@@ -72,6 +76,8 @@ Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-common,
  python-quantum
 Provides: quantum-plugin
 Conflicts: quantum-plugin
+Replaces: python-quantum (<< 2012.1-3)
+Breaks: python-quantum (<< 2012.1-3)
 Description: OpenStack Virtual network service - sample plugin
  Quantum provides an API to dynamically request and configure virtual networks.
  These networks connect "interfaces" from other OpenStack services (e.g., vNICs
@@ -86,6 +92,8 @@ Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-common,
  python-quantum
 Provides: quantum-plugin
 Conflicts: quantum-plugin
+Replaces: python-quantum (<< 2012.1-3)
+Breaks: python-quantum (<< 2012.1-3)
 Description: OpenStack Virtual network service - nicira NVP plugin
  Quantum provides an API to dynamically request and configure virtual networks.
  These networks connect "interfaces" from other OpenStack services (e.g., vNICs
@@ -101,6 +109,8 @@ Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-common,
  python-quantum
 Provides: quantum-plugin
 Conflicts: quantum-plugin
+Replaces: python-quantum (<< 2012.1-3)
+Breaks: python-quantum (<< 2012.1-3)
 Description: OpenStack Virtual network service - linux bridge plugin
  Quantum provides an API to dynamically request and configure virtual networks.
  These networks connect "interfaces" from other OpenStack services (e.g., vNICs
@@ -144,6 +154,8 @@ Depends: ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}, quantum-common,
  python-quantum
 Provides: quantum-plugin
 Conflicts: quantum-plugin
+Replaces: python-quantum (<< 2012.1-3)
+Breaks: python-quantum (<< 2012.1-3)
 Description: OpenStack Virtual network service - ryu plugin
  Quantum provides an API to dynamically request and configure virtual networks.
  These networks connect "interfaces" from other OpenStack services (e.g., vNICs
@@ -180,6 +192,8 @@ Depends: ${python:Depends}, ${misc:Depends},
  python-webob,
  python-quantumclient
 Provides: ${python:Provides}
+Replaces: quantum-server  (<< 2012.1-3)
+Breaks: quantum-server (<< 2012.1-3)
 Description: Quantum is a virutal network service for Openstack. (python library)
  Quantum is a virtual network service for Openstack, and a part of
  Netstack. Just like OpenStack Nova provides an API to dynamically

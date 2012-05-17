@@ -1,3 +1,9 @@
+quantum (2012.1-4) unstable; urgency=low
+
+  * Fix upgrade from version lt 2012.1-2. Closes: #672170
+
+ -- Mehdi Abaakouk <sileht@sileht.net>  Thu, 17 May 2012 13:35:25 +0200
+
 quantum (2012.1-3) unstable; urgency=low
 
   * Removed unnecesary files from top python dir. Closes: #671918
