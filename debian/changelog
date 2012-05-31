@@ -4,6 +4,7 @@ quantum (2012.1-5) unstable; urgency=low
   * Tiny changes in packages description to make lintian happy
   * Add missing upstream man pages
   * Add patches description to make lintian happy
+  * Install man pages
 
  -- Mehdi Abaakouk <sileht@sileht.net>  Wed, 23 May 2012 00:25:14 +0200
 
