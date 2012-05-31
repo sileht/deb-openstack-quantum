@@ -118,7 +118,7 @@ Description: OpenStack Virtual network service - linux bridge plugin
  from Nova VMs). The Quantum API supports extensions to provide advanced network
  capabilities (e.g., QoS, ACLs, network monitoring, etc).
  .
- This package provides a linux bridge plugin to work with.
+ This package provides a Linux bridge plugin to work with.
 
 Package: quantum-plugin-openvswitch-agent
 Architecture: all
@@ -169,7 +169,7 @@ Package: quantum-plugin-ryu-agent
 Architecture: all
 Depends:  ${python:Depends}, ${shlibs:Depends}, ${misc:Depends},
  python-quantum
-Description: OpenStack Virtual network service - openvswitch agent
+Description: OpenStack Virtual network service - ryu agent
  Quantum provides an API to dynamically request and configure virtual networks.
  These networks connect "interfaces" from other OpenStack services (e.g., vNICs
  from Nova VMs). The Quantum API supports extensions to provide advanced network
@@ -205,5 +205,5 @@ Description: Quantum is a virutal network service for Openstack. (python library
  advanced network capabilities (e.g., QoS, ACLs, network monitoring,
  etc.)
  .
- This package provides the python library.
+ This package provides the Python library.
 
