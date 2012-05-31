@@ -1,6 +1,9 @@
---- a/setup.py
-+++ b/setup.py
-@@ -119,4 +119,5 @@
+fix the namespace of python quantum
+Index: quantum/setup.py
+===================================================================
+--- quantum.orig/setup.py	2012-05-31 09:55:43.000000000 +0200
++++ quantum/setup.py	2012-05-31 10:38:29.000000000 +0200
+@@ -105,4 +105,5 @@
              'quantum-server = quantum.server:main',
          ]
      },

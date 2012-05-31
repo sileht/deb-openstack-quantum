@@ -1,5 +1,8 @@
---- a/etc/quantum/plugins/openvswitch/ovs_quantum_plugin.ini
-+++ b/etc/quantum/plugins/openvswitch/ovs_quantum_plugin.ini
+Add default sqlite connection for quantum ovs plugin
+Index: quantum/etc/quantum/plugins/openvswitch/ovs_quantum_plugin.ini
+===================================================================
+--- quantum.orig/etc/quantum/plugins/openvswitch/ovs_quantum_plugin.ini	2012-05-31 09:55:43.000000000 +0200
++++ quantum/etc/quantum/plugins/openvswitch/ovs_quantum_plugin.ini	2012-05-31 10:45:59.000000000 +0200
 @@ -3,7 +3,7 @@
  # Example: sql_connection = mysql://root:nova@127.0.0.1:3306/ovs_quantum
  # Replace 127.0.0.1 above with the IP address of the database used by the

@@ -3,6 +3,7 @@ quantum (2012.1-5) unstable; urgency=low
   * Really fix upgrade from version lt 2012.1-2. Closes: #672170 
   * Tiny changes in packages description to make lintian happy
   * Add missing upstream man pages
+  * Add patches description to make lintian happy
 
  -- Mehdi Abaakouk <sileht@sileht.net>  Wed, 23 May 2012 00:25:14 +0200
 

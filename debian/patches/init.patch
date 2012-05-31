@@ -1,5 +1,8 @@
---- a/etc/init.d/quantum-server
-+++ b/etc/init.d/quantum-server
+Debianize init script, and use unpriviligied account
+Index: quantum/etc/init.d/quantum-server
+===================================================================
+--- quantum.orig/etc/init.d/quantum-server	2012-05-31 09:55:43.000000000 +0200
++++ quantum/etc/init.d/quantum-server	2012-05-31 10:46:34.000000000 +0200
 @@ -18,8 +18,16 @@
  DAEMON_ARGS="--log-file=$LOGFILE"
  DAEMON_DIR=/var/run
@@ -40,4 +43,4 @@
  
 -exit 0
 +exit 0
-\ No newline at end of file
+\ Pas de fin de ligne à la fin du fichier
